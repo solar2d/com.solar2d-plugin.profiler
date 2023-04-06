@@ -42,6 +42,7 @@ function profiler.new(params)
 
     local g = display.newGroup()
     local graph = nil
+    local gameFPS = 0
 
     display.getTimings(results, "update")
 
@@ -165,7 +166,8 @@ function profiler.new(params)
                 tex:releaseSelf()
 
                 --update screen
-                frameRate.text = mfloor(avg[1])
+                gameFPS = mfloor(avg[1])
+                frameRate.text = gameFPS
                 values[1].text = sf("%3.1f", avg[2]).." mb" 
                 values[2].text = sf("%3.1f", avg[3]).." mb" 
                 values[3].text = sf("%3.1f", avg[4]).." ms"
@@ -226,7 +228,7 @@ function profiler.new(params)
     end)
 
     function g.getFPS()
-        return 30
+        return gameFPS
     end
     return g
 end
