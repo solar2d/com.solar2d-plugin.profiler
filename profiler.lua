@@ -5,14 +5,6 @@ local sf = string.format
 local red, orange, blue = {1, 0.2, 0.2}, {1, 0.6, 0.2}, {0.1, 0.8, 1}
 local profiler = {}
 
-local function countDisplayObjects()
-    local str = ""
-    str = str.."water: "..comma_value(display_waterDisplayGroup.numChildren).."   land: "..comma_value(display_landDisplayGroup.numChildren).."", ""
-    str = str.."transport: "..comma_value(display_roadDisplayGroup.numChildren + display_trackDisplayGroup.numChildren + display_overpassDisplayGroup.numChildren).."", ""
-    str = str.."buildings: "..comma_value(display_buildingDisplayGroup.numChildren).."   anim: "..comma_value(carDisplayGroup.numChildren + trainDisplayGroup.numChildren + peopleDisplayGroup.numChildren + monorailDisplayGroup.numChildren + balloonDisplayGroup.numChildren + planeDisplayGroup.numChildren + cloudDisplayGroup.numChildren + boatDisplayGroup.numChildren)
-    return str
-end 
-
 local function avgTable(t)
     local v = {0, 0, 0, 0, 0, 0, 0, 0, 0}
     for i = 1, #t do
