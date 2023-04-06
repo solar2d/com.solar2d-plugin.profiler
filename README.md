@@ -4,8 +4,8 @@ Add the following to your `build.settings`
 ```
 {
     plugins = {
-        ["profiler"] = {
-            publisherId = "com.solar2-plugin",
+        ["plugin.profiler"] = {
+            publisherId = "com.solar2d",
         },
     },
 }
